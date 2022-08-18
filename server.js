@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-// const employeesRoutes = require('./routes/employees.routes');
+const employeesRoutes = require('./routes/employees.routes');
 const departmentsRoutes = require('./routes/departments.routes');
 // const productsRoutes = require('./routes/products.routes');
 
@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// app.use('/api', employeesRoutes);
+app.use('/api', employeesRoutes);
 app.use('/api', departmentsRoutes);
 // app.use('/api', productsRoutes);
 

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Department = require('../models/department.model');
 
+
 router.get('/departments', async (req, res) => {
   try {
     res.json(await Department.find());
@@ -80,4 +81,5 @@ router.delete('/departments/:id', async (req, res) => {
     res.status(500).json({ message: err });
   }
 });
+
 module.exports = router;
